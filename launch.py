@@ -25,7 +25,7 @@ if not os.path.isdir(KEYS):
 if os.environ["SKIP_INSTALL"] in ["", "false"]:
     # Install Arma
 
-    steamcmd = ["/steamcmd/steamcmd.sh"]
+    steamcmd = ["unbuffer", "/steamcmd/steamcmd.sh"]
     steamcmd.extend(["+force_install_dir", "/arma3"])
     steamcmd.extend(["+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"]])
     steamcmd.extend(["+app_update", "233780"])
